@@ -1,5 +1,3 @@
-// src/prisma/prisma.service.ts
-
 import { Injectable } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
 
@@ -31,8 +29,6 @@ export class PrismaService {
   async userDelete(where: { id: number }) {
     return this.prisma.user.delete({ where });
   }
-  
-  // You can add more methods for other models and operations as needed
 
   async cleanup() {
     await this.prisma.$disconnect();
